@@ -22,6 +22,7 @@ if(isset($_SESSION['user_id'])){
     
 </head>
 <body>
+    Test commit
     <header class ="PageHeader">
         <h1 >Jerry's meat shop</h1>
         <nav class="UserNavBar">
