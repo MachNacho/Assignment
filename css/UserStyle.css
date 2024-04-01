@@ -1,0 +1,47 @@
+:root{
+  --BackGroundColor: #ffebcd;
+  --MainColor: 
+}
+body{  
+    background-color:var(--BackGroundColor);
+    margin:0px;
+}
+.PageHeader{
+    background-color: burlywood;
+    border-bottom: 1px solid;
+    padding-bottom: 9px ;
+}
+.PageHeader h1{
+    text-align: center;
+    font-size: 3em;
+}
+.UserNavBar a{
+    color: black;
+    margin: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 10px;
+}
+.UserNavBar a:hover{
+background-color: white;
+border-radius: 0 30px;
+}
+
+.WelcomeMessage{
+    text-align: center;
+    font-size: 5em;
+}
+
+.AccountForm{
+    font-size: 1em;
+    margin: auto;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: white;
+}
+.AccountForm{
+}
+.AccountForm h1{
+    font-size: 3em;
+}
