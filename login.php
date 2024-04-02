@@ -76,7 +76,7 @@ if(isset($_POST['login']))
           echo"<script>window.open('index.php','_self')</script>"; 
         }
         else{
-
+          echo "<script>alert('Invalid account details')</script>"; 
         }
       }
     }
