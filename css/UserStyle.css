@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 :root{
   --BackGroundColor: #ff9900;
   --MainColor: hsl(240, 100%, 50%);
@@ -12,29 +16,57 @@ body{
     font-family: 'Roboto Mono';
 }
 .PageHeader{
-    background-color: burlywood;
-    border-bottom: 1px solid;
+    background-color: var(--MainColor);
+    border-bottom: 3px solid;
     padding-bottom: 9px ;
 }
 .PageHeader h1{
+    color: var(--NonActiveFontColor);
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
 }
 .UserNavBar a{
-    color: black;
+    color: var(--NonActiveFontColor);
     margin: 0 10px;
     text-align: center;
     text-decoration: none;
     font-size: 2em;
     padding: 10px;
+    transition: 0.3s;
 }
 .UserNavBar a:hover{
 background-color: white;
-border-radius: 0 30px;
+color:var(--MainColor);
+border-radius: 40px 0;
 }
 
 .WelcomeMessage{
     text-align: center;
-    font-size: 5em;
+    font-size: 40px;
 }
 
+footer{
+
+    border-top: 3px solid black;
+
+    margin-top: 10px;
+    background-color: var(--MainColor);
+
+    width: 100%; 
+}
+footer address{
+    color: var(--NonActiveFontColor);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+footer p{
+    float: left;
+    margin: 5px;
+    flex-direction: row; 
+}
+@media screen and (max-width: 600px) {
+    .UserNavBar{
+        display: flex;
+        flex-direction: column;
+    }
+}

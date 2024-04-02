@@ -19,6 +19,7 @@ session_start();
 </head>
 
 <body>
+<?php include('components/UserHeader.php')?>
 <form action="UserRegister.php" method="POST">
   <div class = "login-container">
     <h3>Register</h3>
@@ -45,7 +46,7 @@ session_start();
 
     <!-- Button -->
     <input type = "submit" value = "Register" id="loginSubmit" name = "register">
-
+      <!--TODO: Add forgot password thing -->
     <!--Forget button  -->
     <div class = "forgetWrapper" >
     <p>Forgot Password <a href = "">Click here</a></p>
@@ -57,7 +58,7 @@ session_start();
 </form>
 
 
-
+<?php include('components/UserFooter.php')?>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>

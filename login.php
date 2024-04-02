@@ -19,6 +19,7 @@ session_start();
 </head>
 
 <body>
+<?php include('components/UserHeader.php')?>
 <form action="login.php" method="POST">
   <div class = "login-container">
     <h3>Login</h3>
@@ -47,7 +48,7 @@ session_start();
 </form>
 
 
-
+<?php include('components/UserFooter.php')?>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>
@@ -72,7 +73,11 @@ if(isset($_POST['login']))
         $check = password_verify($user_pass,$password);
         if($check == true)
         {
+          $_SESSION['user_id'] = $row["customerID"]; 
           $_SESSION['user_email'] = $user_email; 
+          $_SESSION['user_name'] = $row["Firstname"]; 
+          $_SESSION['user_surname'] = $row["Lastname"];
+
           echo"<script>window.open('index.php','_self')</script>"; 
         }
         else{

@@ -1,8 +1,6 @@
+<!-- TODO: Load from database product itesms -->
 <?php
 $sql = "SELECT * FROM products ORDER BY lastUpdate ";
-$result = $conn->query($sql);
-
-$sql = "SELECT id, firstname, lastname FROM MyGuests ORDER BY lastname";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -15,3 +13,24 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+
+<?php
+           for ($x = 0; $x <= 30; $x++) {
+            echo " 
+            
+            ";
+           }
+        ?>
+
+<div class='product'>
+  <img src='assets\productImages\Pork Texan Steak.jpg' alt='T-Shirt-Ladies'>
+  <div class='product-info'>
+    <div class='product-title'>Title placeholder</div>
+    <div class='product-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    <div class='product-price'>R299.99</div>
+    <div class='product-Discountprice'>R299.99</div>
+  </div>
+  <div class = 'purchaseButton'>
+    <button class = 'btnPurch'>Add to cart</button>
+  </div>
+</div>
