@@ -70,8 +70,15 @@ text-decoration: underline;
     border: none;
     outline: none;
     border-radius: 40px;
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color: hsl(240, 100%, 50%);
+    border: 1px solid hsl(240, 100%, 50%);
+    transition: 0.3s;
     font-size: 30px;
     margin-bottom: 10px;
+}
+#loginSubmit:hover{
+    background-color: hsl(240, 100%, 50%);
+    color: white;
+    box-shadow: 20px;
 }

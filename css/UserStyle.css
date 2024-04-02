@@ -2,7 +2,9 @@
 
 :root{
   --BackGroundColor: #ff9900;
-  --MainColor: 
+  --MainColor: hsl(240, 100%, 50%);
+  --NonActiveFontColor: white;
+  
 }
 body{  
     background-color:var(--BackGroundColor);

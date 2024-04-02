@@ -1,3 +1,10 @@
+<!-- Connect to databse -->
+<?php 
+include('components/DBconnect.php');
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +19,7 @@
 </head>
 
 <body>
-<form action="" method="get">
+<form action="login.php" method="POST">
   <div class = "login-container">
     <h3>Login</h3>
     <!-- Input wrappers -->
@@ -27,11 +34,14 @@
     </div>
 
     <!-- Button -->
-    <input type = "submit" value = "Login" id="loginSubmit">
+    <input type = "submit" value = "Login" id="loginSubmit" name = "login">
 
     <!--Forget button  -->
     <div class = "forgetWrapper" >
     <p>Forgot Password <a href = "">Click here</a></p>
+    </div>
+    <div class = "forgetWrapper" >
+    <p>Don't have an account <a href = "UserRegister.php">Click here</a></p>
     </div>
   </div>
 </form>
@@ -41,3 +51,34 @@
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>
+
+<?php
+if(isset($_POST['login']))  
+  {  
+    $user_pass= $_POST['password'];
+    $user_email=$_POST['email'];
+  
+    $check_email_query="select * from customer WHERE email='$user_email'";  
+    $run_query=mysqli_query($conn,$check_email_query);  
+  
+    if(mysqli_num_rows($run_query)<0)  
+    { 
+      echo "<script>alert('Invalid account details')</script>";  
+      exit();  
+    }
+    else{
+      while($row = mysqli_fetch_assoc($run_query)) {
+        $password = $row["Password"];
+        $check = password_verify($user_pass,$password);
+        if($check == true)
+        {
+          $_SESSION['user_email'] = $user_email; 
+          echo"<script>window.open('index.php','_self')</script>"; 
+        }
+        else{
+
+        }
+      }
+    }
+  }
+?>
