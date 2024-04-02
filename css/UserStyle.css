@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 :root{
-  --BackGroundColor: #ffebcd;
+  --BackGroundColor: #ff9900;
   --MainColor: 
 }
 body{  
     background-color:var(--BackGroundColor);
     margin:0px;
+    font-family: 'Roboto Mono';
 }
 .PageHeader{
     background-color: burlywood;
@@ -33,15 +36,3 @@ border-radius: 0 30px;
     font-size: 5em;
 }
 
-.AccountForm{
-    font-size: 1em;
-    margin: auto;
-    width: fit-content;
-    border-radius: 10px;
-    background-color: white;
-}
-.AccountForm{
-}
-.AccountForm h1{
-    font-size: 3em;
-}

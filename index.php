@@ -8,7 +8,6 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
 };
 ?>
 
@@ -22,17 +21,7 @@ if(isset($_SESSION['user_id'])){
     
 </head>
 <body>
-    Test commith
-    <header class ="PageHeader">
-        <h1 >Jerry's meat shop</h1>
-        <nav class="UserNavBar">
-            <a href = "#Home">Home</a>
-            <a href = "#Home">Shop</a>
-            <a href = "#Home">Account</a>
-            <a href = "#Home">Cart</a>   
-           </nav>
-    </header>
-
+    <?php include('components/UserHeader.php')?>
     <h1 class = "WelcomeMessage">Welcome to Jerry's meat shop</h1>
 
 </body>

@@ -1,0 +1,77 @@
+/* Login forms */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
+    width: 420px;
+    border-radius: 20px;
+}
+.login-container h3{
+    margin-top: 30px ;
+    text-align: center;
+    font-size: 36px;
+}
+
+.login-wrapper{
+    position: relative;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 60px;
+    width: 100%;
+    height:50px;
+    margin: 40px 0;
+}
+
+.login-wrapper input{
+    padding: 10px 40px 10px 10px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline:none;
+    font-family: 'Roboto Mono';
+    font-size: 16px;
+
+}
+
+.login-wrapper box-icon{
+    position: absolute;
+    right: 20px  
+}
+
+.forgetWrapper{
+    margin-top: 10px;
+    accent-color: white;
+    margin-right: 4px;
+}
+.forgetWrapper a {
+    text-decoration: none;
+    color: blue;
+}
+
+.forgetWrapper a :hover{
+text-decoration: underline;
+}
+
+#loginSubmit{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background-color: blue;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
