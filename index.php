@@ -16,7 +16,7 @@ if(isset($_SESSION['user_email'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerry's meat shop-HOME</title>
+    <title>Jerry's meat shop-Home</title>
     <link href="css/UserStyle.css?<?=filemtime("css/UserStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>

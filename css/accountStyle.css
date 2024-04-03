@@ -26,6 +26,7 @@ border-bottom: 1px solid;
     margin-right: 40px;
 }
 #btnChange{
+    font-family: 'Roboto Mono';
     width: 100%;
     height: 45px;
     border: none;
@@ -36,6 +37,7 @@ border-bottom: 1px solid;
     transition: 0.3s;
     font-size: 30px;
     margin-bottom: 10px;
+    border-radius: 40px;
 }
 
 #btnChange:hover{

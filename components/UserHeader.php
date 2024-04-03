@@ -5,6 +5,6 @@
             <a href = "index.php">Home</a>
             <a href = "shop.php">Shop</a>
             <a href = "account.php">Account</a>
-            <a href = "#Home">Cart</a>
+            <a href = "cart.php">Cart</a>
            </nav>
 </header>
