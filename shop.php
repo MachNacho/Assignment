@@ -36,5 +36,6 @@ if(isset($_SESSION['user_email'])){
     </div>
    
     <?php include('components/UserFooter.php')?>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>

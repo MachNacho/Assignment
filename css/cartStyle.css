@@ -1,16 +1,51 @@
-.Cart-container{
-    background-color: white;
+body{
+    display:block;
+}
+.Cart-container,.button-container{
+    font-size: 32px;
     margin: auto;
-    padding: 20px;
-    width: fit-content;
+    background-color: white;
     border-radius: 10px;
 }
-
-.cart-wrapper{
-    display: flex;
-    justify-content: space-evenly;
+.Cart-container th{
+ border-bottom: 1px solid;
+}
+.Cart-container td{
+    text-align: center;
+    padding:  20px 40px;
+}
+.button-container{
+    margin-top: 10px;
+    width:fit-content;
+    padding: 10px;
+}
+.button-container input{
+    font-family: 'Roboto Mono';
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 10px;
+    transition: 0.5s;
 }
 
-.CartHeader,.CartItem{
-    margin: 10px 20px;
+#btnClear{
+    color: red;
+    border-color: red;
+
+}
+#btnClear:hover{
+    box-shadow: inset 11.5em 0 0 0  red;
+    color: white;
+    border-radius:  40px 0;
+}
+#btnPurchase{
+    color: green;
+    border-color: green;
+}
+
+#btnPurchase:hover{
+    color: white;
+    border-radius:  40px 0;
+    box-shadow: inset 11.5em 0 0 0 green;
 }

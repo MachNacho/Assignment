@@ -1,5 +1,6 @@
 <?php
    session_start();
+   $_SESSION['CartCount'];
    include('DBconnect.php');
    if(empty($_SESSION['user_id'])){
       header('location:../login.php');

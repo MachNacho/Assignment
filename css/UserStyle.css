@@ -46,12 +46,10 @@ border-radius: 40px 0;
 }
 
 footer{
-
+    position: absolute;
     border-top: 3px solid black;
-
     margin-top: 10px;
     background-color: var(--MainColor);
-
     width: 100%; 
 }
 footer address{
@@ -60,6 +58,7 @@ footer address{
     margin-bottom: 10px;
 }
 footer p{
+    color: var(--NonActiveFontColor);
     float: left;
     margin: 5px;
     flex-direction: row; 
