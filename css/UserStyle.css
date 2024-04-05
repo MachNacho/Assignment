@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 :root{
-  --BackGroundColor: #ff9900;
+  --BackGroundColor: #ff990084;
   --MainColor: hsl(240, 100%, 50%);
   --NonActiveFontColor: white;
   

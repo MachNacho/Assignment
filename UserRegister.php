@@ -72,7 +72,7 @@ if(isset($_POST['register']))
     $user_pass= password_hash($_POST['password'], PASSWORD_DEFAULT);
     $user_email=$_POST['email'];
   
-  //here query check weather if user already registered so can't register again.  
+    //here query check weather if user already registered so can't register again.  
     $check_email_query="select * from customer WHERE email='$user_email'";  
     $run_query=mysqli_query($conn,$check_email_query);  
   
@@ -81,11 +81,10 @@ if(isset($_POST['register']))
       echo "<script>alert('Email $user_email is already exist in our database, Please try another one!')</script>";  
       exit();  
     }  
-//insert the user into the database.  
+    //insert the user into the database.  
     $insert_user="insert into customer(Firstname,Lastname,email,Password) VALUE ('$user_firstName','$user_lastName','$user_email','$user_pass')";  
     if(mysqli_query($conn,$insert_user))  
     {  
-        $_SESSION['user_email'] = $user_email; 
         echo"<script>window.open('index.php','_self')</script>";  
     }  
 } 

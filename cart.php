@@ -35,7 +35,6 @@ $UserID = $_SESSION['user_id'];
     <link href="css/cartStyle.css?<?=filemtime("css/cartStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-       <!-- FIXME:BETTER WAY TO FIX -->
 <?php
     if(isset($_SESSION['user_email'])){
          echo $_SESSION['user_email'];
@@ -46,15 +45,13 @@ $UserID = $_SESSION['user_id'];
     <?php include('components/UserHeader.php')?>
   
     <h1 class = "WelcomeMessage">CART</h1>
-    <table class = "Cart-container">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quaintity</th>
-</tr>
-        <?php
-    $UserArray = array();
+    <div class = "Cart-container">
+
+    </div>
+    
+
+<?php
+    $UserArray = array();// Array to hold the producty ids in the cart
     $sql = "SELECT * FROM  cart WHERE userID = $UserID";
     $result = $conn->query($sql);
 
@@ -72,28 +69,19 @@ $UserID = $_SESSION['user_id'];
                 $r =$row['Price'];
                 $y =$row['Quantity'];
                echo("
-               <tr>
-               <td class = 'CartItem'>$w</td>
-               <td class = 'CartItem'>$p</td>
-               <td class = 'CartItem'>$r</td>
-               <td class = 'CartItem'>$y</td>
-               </tr>
                ");
             }
         }
     } else {
-        echo "0 results";
+        echo "Nothing in cart";
     }
 ?>
-  </table>
+
+<!-- Form for clearing cart and placing order -->
   <form action = 'cart.php' method="post">
   <div class = "button-container">
-
-
     <input type="submit" value = "Clear" id = "btnClear" name = "btnClear">
     <input type="submit" value = "Purchase" id = "btnPurchase" name = "btnPurchase">
-
-
   </div>
   </form>
     <?php include('components/UserFooter.php')?>
