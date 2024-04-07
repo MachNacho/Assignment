@@ -26,7 +26,10 @@ if ($result->num_rows > 0) {
     <div class = 'quantityContainer'>$Quantity</div>
     <div class = 'dateContainer'>$date</div>
     <div class = 'imageContainer'> <img src='..\assets\productImages\\$image' alt='image of $prodName'></div>
-    <div class = 'buttonOption'><input type = 'button'></div>
+    <div class = 'buttonOption'>
+    <input type = 'submit' class = 'formButton' name = 'deleteRecord'>
+    <input type = 'button' class = 'formButton' name = 'editRecord'>
+    </div>
 </div>
         ");
   }

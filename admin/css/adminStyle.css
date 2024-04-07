@@ -40,6 +40,15 @@ width: 100%;
     justify-content: space-evenly;
     border: 1px solid black;
 }
+.imageContainer img{
+    width:10px;
+    height:auto;
+}
+.formButton{
+    border-radius: 20px;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 600px) {
     .crudApplication-wrapper{
         flex-direction: column;
@@ -48,8 +57,4 @@ width: 100%;
     .Input-container select,.Input-container input{
         font-size: 20px;
     }
-}
-.imageContainer img{
-    width:10px;
-    height:auto;
 }
