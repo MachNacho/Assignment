@@ -44,7 +44,6 @@ include('components/DBconnect.php');
 
     <!-- Button -->
     <input type = "submit" value = "Register" id="loginSubmit" name = "register">
-      <!--FIXME: fix forgot password thing -->
     <!--Forget button  -->
     <div class = "forgetWrapper" >
     <p>Forgot Password <a href = "ForgetPassword.php">Click here</a></p>

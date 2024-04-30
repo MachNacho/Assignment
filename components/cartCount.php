@@ -1,7 +1,7 @@
 <?php
     include('DBconnect.php');
     $user =$_SESSION['user_id'];
-    $sql = "SELECT * FROM cart where userID = $user";
+    $sql = "SELECT * FROM cart where customerID = $user";
     $result = $conn->query($sql);
     if(mysqli_num_rows($result)==0){
     }

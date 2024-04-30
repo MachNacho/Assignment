@@ -21,6 +21,11 @@ include('components/DBconnect.php');
     }
     header("Location:  checkout.php"); 
   } 
+  if(isset($_POST['btnPurchase']))
+  {
+    global $UserID;
+    
+  } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,3 +64,15 @@ include('components/loadCart.php');
 </body>
 </html>
 
+<?php
+// TODO cart editing
+  if(isset($_POST['btnADDquantity']))
+  {
+    $id = $_POST['btnADDquantity'];
+    $sql = "UPDATE cart SET quantity=quantity+1 WHERE cartID = $id";
+    if ($conn->query($sql) === TRUE) {
+    }
+  mysqli_close($conn);
+  $_POST = array();
+  }
+?>

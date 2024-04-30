@@ -50,7 +50,6 @@
 
 
 <?php 
-//FIXME fix change page 
 if(isset($_POST['Change']))  {
   include("components/DBconnect.php");
   session_start();

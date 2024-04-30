@@ -1,0 +1,4 @@
+web password: h-KeiN_BdB~6JH$
+db pasword: $Isipho13
+
+php my admin:id22103928_root

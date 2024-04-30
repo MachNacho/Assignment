@@ -5,7 +5,7 @@
             <a href = "shop.php">Shop</a>
             <a href = "account.php">Account</a>
             <a href = "Checkout.php" id = "leftItem">Cart
-
+                <?php include("components/cartCount.php");?>
             </a>
            </nav>
 </header>
