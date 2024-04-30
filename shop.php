@@ -1,16 +1,11 @@
-<!-- Connect to databse -->
 <?php 
-include('components/DBconnect.php');
-
-session_start();
-
-if(isset($_SESSION['user_email'])){
-   $user_id = $_SESSION['user_email'];
-}else{
-   $user_id = '';
-};
+    session_start();
+    if(isset($_SESSION['user_email'])){
+        echo $_SESSION['user_email'];
+        echo"<a href = 'components/logout.php'>Logout</a>";
+    }
+include('components/UserHeader.php')
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,21 +16,21 @@ if(isset($_SESSION['user_email'])){
     <link href="css/shopStyle.css?<?=filemtime("css/shopStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <!-- FIXME:BETTER WAY TO FIX -->
-<?php
-    if(isset($_SESSION['user_email'])){
-         echo $_SESSION['user_email'];
-       echo"<a href = 'components/logout.php'>Logout</a>";
-    }
-    ?>
-    <?php include('components/UserHeader.php')?>
-<!-- TODO Remove loop and make it add to the website database --> 
-
+    <div class = "searchForm">
+        <form action="" method="get">
+            <label for = "keyword">Search:</label>
+            <input class = searchForm name = "keyword" type="search" id = "keyword" autocomplete="FALSE" placeholder="Search product">
+            <label for = "inputfield">Sort:</label>
+            <select class = searchForm  name="searchItems" id = "inputfield" ></select>
+            <button class = searchForm  type="submit">Search</button>
+        </form>
+    </div>
     <div class="container">
-    <?php include('components/LoadDatabse.php')?>
+    <?php include('components/LoadProducts.php')?>
     </div>
    
     <?php include('components/UserFooter.php')?>
+    <script src="js/script.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>

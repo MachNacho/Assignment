@@ -20,7 +20,6 @@ if(isset($_SESSION['user_email'])){
     <link href="css/UserStyle.css?<?=filemtime("css/UserStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-       <!-- FIXME:BETTER WAY TO FIX -->
 <?php
     if(isset($_SESSION['user_email'])){
          echo $_SESSION['user_email'];
@@ -29,7 +28,7 @@ if(isset($_SESSION['user_email'])){
     ?>
     <?php include('components/UserHeader.php')?>
     <h1 class = "WelcomeMessage">Welcome to Jerry's meat shop</h1>
-   
+    
     <?php include('components/UserFooter.php')?>
 </body>
 </html>

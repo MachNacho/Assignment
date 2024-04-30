@@ -1,14 +1,9 @@
-<!-- Connect to databse -->
-<?php 
-include('components/DBconnect.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerry's meat shop-Register</title>
+    <title>Jerry's meat shop-Change Information</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -18,9 +13,9 @@ include('components/DBconnect.php');
 
 <body>
 <?php include('components/UserHeader.php')?>
-<form action="UserRegister.php" method="POST">
+<form action="changepage.php" method="POST">
   <div class = "login-container">
-    <h3>Register</h3>
+    <h3>Edit Information</h3>
     <!-- Input wrappers -->
     <div class = "login-wrapper">
       <input type="Text" name = "firstName" required placeholder="Enter First Name">
@@ -43,15 +38,7 @@ include('components/DBconnect.php');
     </div>
 
     <!-- Button -->
-    <input type = "submit" value = "Register" id="loginSubmit" name = "register">
-      <!--FIXME: fix forgot password thing -->
-    <!--Forget button  -->
-    <div class = "forgetWrapper" >
-    <p>Forgot Password <a href = "ForgetPassword.php">Click here</a></p>
-    </div>
-    <div class = "forgetWrapper" >
-    <p>Have an account <a href = "Userlogin.php">Click here</a></p>
-    </div>
+    <input type = "submit" value = "Change" id="loginSubmit" name = "Change">
   </div>
 </form>
 
@@ -62,31 +49,27 @@ include('components/DBconnect.php');
 </html>
 
 
-<?php  
-if(isset($_POST['register']))  
-{  
-  //variables for values to be inserted
+<?php 
+//FIXME fix change page 
+if(isset($_POST['Change']))  {
+  include("components/DBconnect.php");
+  session_start();
   $user_firstName=$_POST['firstName'];   
   $user_lastName=$_POST['lastName'];
   $user_pass= password_hash($_POST['password'], PASSWORD_DEFAULT);// password hashed for security
   $user_email=$_POST['email'];
-  
-  //here query check weather if user already registered so can't register again.  
-  $check_email_query="select * from customer WHERE email='$user_email'";  
-  $run_query=mysqli_query($conn,$check_email_query);  
-  
-  if(mysqli_num_rows($run_query)>0)  
-  {  
-    // script to alert user of used email
-    echo "<script>alert('Email $user_email is already exist in our database, Please try another one!')</script>";  
-    exit();  
-  }  
-  //insert the user into the database.  
-  $insert_user="insert into customer(Firstname,Lastname,email,userpassword) VALUE ('$user_firstName','$user_lastName','$user_email','$user_pass')";  
-  if(mysqli_query($conn,$insert_user))  
-  {  
-    // switches to login for user to log in with information
-    echo"<script>window.open('Userlogin.php','_self')</script>";  
-  }  
-} 
+  $USERID = $_SESSION['user_id'];
+
+  $sql = "UPDATE customer SET Firstname='$user_firstName',Lastname='$user_lastName',email='$user_email',userpassword = '$user_pass' WHERE customerID='$USERID'";
+  if ($conn->query($sql) === TRUE) {
+    $_SESSION['user_email'] = $user_email; 
+    $_SESSION['user_name'] = $user_firstName; 
+    $_SESSION['user_surname'] =  $user_lastName;
+    header("Location:account.php");
+  } else {
+    echo "Error updating record: " . $conn->error;
+  }
+ 
+}
+
 ?>  

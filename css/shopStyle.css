@@ -6,7 +6,11 @@
     padding: 0 20px;
     justify-content: space-evenly;
 }
-
+.searchForm{
+    margin: 10px;
+    font-family: 'Roboto Mono';
+    font-size: 1.2em;
+}
 .product {
     height: 500px;
     padding: 10px;

@@ -1,7 +1,5 @@
-<!-- TODO: Load from database product itesms -->
 <?php
-$sql = "SELECT * FROM products ORDER BY lastUpdate ";
-$result = $conn->query($sql);
+include("search.php");
 
 if ($result->num_rows > 0) {
   // output data of each row

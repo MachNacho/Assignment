@@ -1,15 +1,10 @@
-<!-- Connect to databse -->
 <?php 
-include('components/DBconnect.php');
-
 session_start();
-
 if(isset($_SESSION['user_email'])){
-
 }
 else
 {
- header("Location: login.php"); 
+ header("Location: Userlogin.php"); 
 };
 ?>
 
@@ -19,9 +14,6 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerry's meat shop-Account</title>
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <link href="css/UserStyle.css?<?=filemtime("css/UserStyle.css")?>" rel="stylesheet" type="text/css"/>
     <link href="css/accountStyle.css?<?=filemtime("css/accountStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
@@ -34,7 +26,6 @@ else
     ?>
    <?php include('components/UserHeader.php')?>
    <h1 class = "WelcomeMessage">Welcome back <?php echo $_SESSION['user_name']?></h1>
-<!-- TODO: ACCOUNT CLASS CONTAINER FOR ACCOUNT INFORMATION -->
    <div class = "accountContainer">
       <div class = "HeaderWrapper">Account Information</div>
 
@@ -52,10 +43,26 @@ else
          <p class = "MainPart">Email:<p>
          <p class = "InfoPart"><?php echo $_SESSION['user_email']?><p>
       </div>
-      <Button name = "btnChange" id = "btnChange" function ="Changes()">Change info</Button>
+      <form method = "post" action="account.php">
+      <Button class = "btnModify" name = "btnChange" id = "btnChange">Change info</Button>
+      <Button class = "btnModify"  name = "btnDelete" id = "btnDelete" >Delete Account</Button>
+      </form>
+
+      <?php
+         include("components/userEdit.php");
+         if(isset($_POST['btnDelete']))
+         {
+            userRemoval($_SESSION['user_id']);
+         }
+         if(isset($_POST['btnChange']))
+         {
+           header("Location:Changepage.php");
+         }
+      ?>
    </div>
 
    <?php include('components/UserFooter.php')?>
 </body>
 <script src = "js/script.js"></script>
 </html>
+

@@ -2,6 +2,9 @@ body{
     display:block;
 }
 .Cart-container,.button-container{
+    text-align: center;
+    padding: 10px;
+    width: fit-content;
     font-size: 32px;
     margin: auto;
     background-color: white;
@@ -13,6 +16,14 @@ body{
 .Cart-container td{
     text-align: center;
     padding:  20px 40px;
+}
+.CartItem-container{
+    display: flex;
+}
+.CartItem{
+    width:200px;
+    border: 1px solid;
+    padding: 20px;
 }
 .button-container{
     margin-top: 10px;
@@ -49,3 +60,4 @@ body{
     border-radius:  40px 0;
     box-shadow: inset 11.5em 0 0 0 green;
 }
+
