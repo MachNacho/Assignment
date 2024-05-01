@@ -1,4 +1,5 @@
 <?php
+if(isset($_SESSION['user_id'])){
     include('DBconnect.php');
     $user =$_SESSION['user_id'];
     $sql = "SELECT * FROM cart where customerID = $user";
@@ -11,5 +12,5 @@
     else{
         echo mysqli_num_rows($result);
     }
-   
+} 
 ?>

@@ -25,7 +25,7 @@
     transition: 0.3s;
 }
 .product:hover {
-    border-radius:40px 0;
+    border-radius:40px ;
     .btnPurch{
         display:inline;
     }
@@ -40,26 +40,19 @@
 }
 
 .product-title {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .product-description {
     margin-bottom: 10px;
+    font-size: 1em;
 }
-
-.product-price,.product-Discountprice {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-.product-Discountprice {
-    text-decoration: line-through;
-    color: #960000;
-}
-
 .product-price{
+    font-weight: bold;
     color: #009688;
+    font-size: 1.5em;
 }
 .btnPurch{
     display: none;
@@ -75,14 +68,14 @@
     transition: 0.3s;
     font-size: 30px;
     margin-bottom: 10px;
-    border-radius: 40px;
+    border-radius: 10px;
 }
 
 .btnPurch:hover{
     background-color: hsl(240, 100%, 50%);
     color: white;
     box-shadow: 20px;
-    border-radius:  40px 0;
+    border-radius:  40px ;
     .cart-add{
         -webkit-filter: invert(100%);
         filter: invert(100%);

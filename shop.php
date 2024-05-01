@@ -4,7 +4,6 @@
         echo $_SESSION['user_email'];
         echo"<a href = 'components/logout.php'>Logout</a>";
     }
-include('components/UserHeader.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +15,7 @@ include('components/UserHeader.php')
     <link href="css/shopStyle.css?<?=filemtime("css/shopStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+    <?php include('components/UserHeader.php');?>
     <div class = "searchForm">
         <form action="" method="get">
             <label for = "keyword">Search:</label>

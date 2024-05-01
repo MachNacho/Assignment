@@ -11,28 +11,30 @@ body{
     border-radius: 10px;
 }
 
-.Cart-container th{
- border-bottom: 1px solid;
-}
-.Cart-container td{
-    text-align: center;
-    padding:  20px 40px;
-}
 .CartItem-container{
     display: flex;
+    border-bottom: 1px solid;
 }
 .CartItem{
     width:200px;
-    border-bottom: 1px solid;
     padding: 20px;
 }
 .cartItemEdit{
     display:grid;
+    align-content: space-around;
 }
 .btnEdits{
+    border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 0.75em;
+    font-size: 1em;
+    padding: 10px;
+    background-color: transparent;
+    transition: 1s;
+}
+.btnEdits:hover{
+    border: 1px solid;
+    border-radius: 30px;
 }
 .button-container{
     margin-top: 10px;
@@ -46,7 +48,7 @@ body{
     background-color: transparent;
     border-style: solid;
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 #btnClear{
@@ -57,7 +59,7 @@ body{
 #btnClear:hover{
     box-shadow: inset 11.5em 0 0 0  red;
     color: white;
-    border-radius:  40px 0;
+    border-radius:  40px ;
 }
 #btnPurchase{
     color: green;
@@ -66,7 +68,7 @@ body{
 
 #btnPurchase:hover{
     color: white;
-    border-radius:  40px 0;
+    border-radius:  40px ;
     box-shadow: inset 11.5em 0 0 0 green;
 }
 

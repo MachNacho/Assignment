@@ -64,15 +64,3 @@ include('components/loadCart.php');
 </body>
 </html>
 
-<?php
-// TODO cart editing
-  if(isset($_POST['btnADDquantity']))
-  {
-    $id = $_POST['btnADDquantity'];
-    $sql = "UPDATE cart SET quantity=quantity+1 WHERE cartID = $id";
-    if ($conn->query($sql) === TRUE) {
-    }
-  mysqli_close($conn);
-  $_POST = array();
-  }
-?>

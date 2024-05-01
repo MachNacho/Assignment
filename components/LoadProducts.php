@@ -16,9 +16,8 @@ if ($result->num_rows > 0) {
     <img src='assets\productImages\\$image' alt='image of $prodName'>
     <div class='product-info'>
       <div class='product-title'>$prodName</div>
-      <div class='product-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.$prodAmount  $prodMeasurment</div>
-      <div class='product-price'>$prodPrice</div>
-      <div class='product-Discountprice'>R299.99</div>
+      <div class='product-description'>Weight: $prodAmount  $prodMeasurment</div>
+      <div class='product-price'>Price: R$prodPrice</div>
     </div>
     <div class = 'purchaseButton'>
       <form action = 'components/Add_to_cart.php' method ='get'>

@@ -11,6 +11,7 @@ include_once("DBconnect.php");
         <div class = 'CartItem'>Price</div>
         <div class = 'CartItem'>Amount</div>
         <div class = 'CartItem'>Quantity</div>
+        <div class = 'CartItem'>Edits</div>
     </div>
     ";
     if ($result->num_rows > 0) {
@@ -24,17 +25,15 @@ include_once("DBconnect.php");
             $PQ = $row["Quantity"];
             $total =$total + ($PP*$PQ);
             $current = ($PP*$PQ);
-            //TODO individual delete item CHANGE TO SLIDER INSTEAD
             echo"
             
             <div class = 'CartItem-container'>
                 <div class = 'CartItem'>$PN</div>
-                <div class = 'CartItem'>R $current</div>
+                <div class = 'CartItem'>R$current</div>
                 <div class = 'CartItem'>$PA $PU</div>
                 <div class = 'CartItem'>$PQ</div>
                 <div class = 'cartItemEdit'>
-                <form action = '' method = 'post'>
-                
+                <form action = 'components/editCart.php' method = 'post'>
                 <button class = 'btnEdits' name = 'btnADDquantity' value = $PI>Add</button>
                 <button class = 'btnEdits' name = 'btnRemoveItem' value = $PI>Remove</button>
                 <button class = 'btnEdits' name = 'btnMinusquantity' value = $PI>Lower</button>
