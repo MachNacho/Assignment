@@ -71,3 +71,48 @@ footer p{
         flex-direction: column;
     }
 }
+
+.indexPIC{
+    width: auto;
+    height: 200px;
+    margin: 10px;
+}
+.indexPara{
+    margin: 10px;
+}
+.indexPara{
+    margin: 10px 50px;
+}
+
+
+
+
+
+/* TODO FAQ THING */
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width:70%;
+    text-align: left;
+    border: none;
+    outline: none;
+    margin: 0px 10px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    width:70%;
+    padding: 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    margin: 0px 10px;
+  }

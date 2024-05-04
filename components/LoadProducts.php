@@ -4,7 +4,6 @@ include("search.php");
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-
     $prodName = $row["Name"];
     $prodPrice = $row["Price"];
     $prodMeasurment = $row["UnitOfMeasurment"];
@@ -28,7 +27,7 @@ if ($result->num_rows > 0) {
     ");
   }
 } else {
-  echo "0 results";
+  echo "<H1>0 results</H1>";
 }
 $conn->close();
 ?>
