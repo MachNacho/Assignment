@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 :root{
-  --BackGroundColor: #ff990084;
-  --MainColor: hsl(240, 100%, 50%);
+  --BackGroundColor: #b9b9b984;
+  --MainColor: hsl(0, 0%, 0%);
   --NonActiveFontColor: white;
   
 }
@@ -38,7 +38,6 @@ body{
 .UserNavBar a:hover{
     background-color: white;
     color:var(--MainColor);
-    border-radius: 10px;
     padding:0 50px;
 }
 
@@ -71,35 +70,38 @@ footer p{
         flex-direction: column;
     }
 }
-
-.indexPIC{
-    width: auto;
-    height: 200px;
-    margin: 10px;
-}
 .indexPara{
-    margin: 10px;
+    font-size: 3em;
 }
-.indexPara{
-    margin: 10px 50px;
+.indexWords{
+    margin: 10px 300px;
 }
-
-
-
-
+.indexText{
+    font-weight: 500;
+    font-size: 30px;
+    margin: 15px 0;
+    border-bottom: 1px solid;
+}
+.indeximg{
+    width:14vw;
+    height: auto;
+}
 
 /* TODO FAQ THING */
 
 .accordion {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
     background-color: #eee;
     color: #444;
     cursor: pointer;
     padding: 18px;
     width:70%;
-    text-align: left;
+    text-align: center;
     border: none;
     outline: none;
-    margin: 0px 10px;
+    margin: auto;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -109,10 +111,11 @@ footer p{
   
   /* Style the accordion panel. Note: hidden by default */
   .panel {
+    font-size: 30px;
     width:70%;
     padding: 18px;
     background-color: white;
     display: none;
     overflow: hidden;
-    margin: 0px 10px;
+    margin: auto
   }

@@ -39,11 +39,7 @@ include('components/DBconnect.php');
 </head>
 <body>
 <?php
-    if(isset($_SESSION['user_email'])){
-      echo $_SESSION['user_email'];
-      echo"<a href = 'components/logout.php'>Logout</a>";
-    }
-    include('components/UserHeader.php')
+    include('components/UserHeader.php');
 ?>
 
 <h1 class = "WelcomeMessage">CART</h1>

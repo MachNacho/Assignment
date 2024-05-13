@@ -1,10 +1,3 @@
-<?php 
-    session_start();
-    if(isset($_SESSION['user_email'])){
-        echo $_SESSION['user_email'];
-        echo"<a href = 'components/logout.php'>Logout</a>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +8,7 @@
     <link href="css/shopStyle.css?<?=filemtime("css/shopStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <?php include('components/UserHeader.php');?>
+    <?php session_start();include('components/UserHeader.php');?>
     <div class = "searchForm">
         <form action="" method="get">
             <label for = "keyword">Search:</label>

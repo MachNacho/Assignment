@@ -18,12 +18,6 @@ else
     <link href="css/accountStyle.css?<?=filemtime("css/accountStyle.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<?php
-    if(isset($_SESSION['user_email'])){
-         echo $_SESSION['user_email'];
-       echo"<a href = 'components/logout.php'>Logout</a>";
-    }
-    ?>
    <?php include('components/UserHeader.php')?>
    <h1 class = "WelcomeMessage">Welcome back <?php echo $_SESSION['user_name']?></h1>
    <div class = "accountContainer">

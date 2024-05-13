@@ -34,7 +34,7 @@ session_start();
     </div>
    <!-- Error wrapper -->
    <div class = "Error-wrapper" id = "loginError">
-      Invalid email or password
+      Invalid email or email not found
     </div>
 
     <!-- Button -->

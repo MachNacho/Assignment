@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     margin: 20px auto;
     padding: 0 20px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 .searchForm{
     margin: 10px;
