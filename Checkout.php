@@ -1,6 +1,7 @@
 <?php 
 $UserID;
 session_start();
+// verifies if user is logged in
 if(isset($_SESSION['user_email'])){
  global $UserID;
  $UserID = $_SESSION['user_id'];
