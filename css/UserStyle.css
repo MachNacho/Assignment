@@ -6,8 +6,8 @@
 }
 :root{
   --BackGroundColor: #b9b9b984;
-  --MainColor: hsl(0, 0%, 0%);
-  --NonActiveFontColor: white;
+  --MainColor: hsl(0, 0%, 100%);
+  --NonActiveFontColor: rgb(0, 0, 0);
   
 }
 body{  
@@ -16,14 +16,19 @@ body{
     font-family: 'Roboto Mono';
 }
 .PageHeader{
+    padding: 10px;
     background-color: var(--MainColor);
-    border-bottom: 3px solid;
     padding-bottom: 9px ;
 }
-.PageHeader h1{
+
+.PageLogo img{
     color: var(--NonActiveFontColor);
-    text-align: center;
-    font-size: 2em;
+    height: 100px;
+    width: auto;
+    margin-right: 110px ;
+}
+.UserNavBar{
+    width:100%;
 }
 .UserNavBar a{
     color: var(--NonActiveFontColor);
@@ -36,11 +41,13 @@ body{
     transition: 0.8s;
 }
 .UserNavBar a:hover{
-    background-color: white;
+    background-color: black;
     color:var(--MainColor);
     padding:0 50px;
 }
-
+.leftItem{
+    float: right;
+}
 .WelcomeMessage{
     text-align: center;
     font-size: 40px;
@@ -64,12 +71,7 @@ footer p{
     margin: 5px;
     flex-direction: row; 
 }
-@media screen and (max-width: 600px) {
-    .UserNavBar{
-        display: flex;
-        flex-direction: column;
-    }
-}
+
 .indexPara{
     font-size: 3em;
 }
@@ -79,8 +81,8 @@ footer p{
 .indexText{
     font-weight: 500;
     font-size: 30px;
-    margin: 15px 0;
-    border-bottom: 1px solid;
+    margin: 15px 0px;
+
 }
 .indeximg{
     width:14vw;
@@ -119,3 +121,18 @@ footer p{
     overflow: hidden;
     margin: auto
   }
+
+  @media screen and (max-width: 830px) {
+    
+    .UserNavBar,.PageHeader{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .indexWords{
+        margin: 10px 10px;
+    }
+    #pageHead{
+        display: none;
+    }
+}

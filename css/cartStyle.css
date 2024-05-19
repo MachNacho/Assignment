@@ -72,3 +72,6 @@ body{
     box-shadow: inset 11.5em 0 0 0 green;
 }
 
+@media screen and (max-width: 600px) {
+    
+}

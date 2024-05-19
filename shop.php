@@ -6,6 +6,7 @@
     <title>Jerry's meat shop-Shop</title>
     <link href="css/UserStyle.css?<?=filemtime("css/UserStyle.css")?>" rel="stylesheet" type="text/css"/>
     <link href="css/shopStyle.css?<?=filemtime("css/shopStyle.css")?>" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="assets/logoIcon.ico">
 </head>
 <body>
     <?php session_start();include('components/UserHeader.php');?>

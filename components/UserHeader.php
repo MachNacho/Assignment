@@ -1,11 +1,13 @@
 
 <header class ="PageHeader">
-        <h1>Jerry's meat shop</h1>
+        <div class="PageLogo">
+            <img src = "assets/Logo.png">
+        </div>
         <nav class="UserNavBar">
             <a href = "index.php">Home</a>
             <a href = "shop.php">Shop</a>
             <a href = "account.php">Account</a>
-            <a href = "Checkout.php" id = "leftItem">Cart
+            <a href = "Checkout.php" class= "leftItem">Cart
                 <?php include("components/cartCount.php");?>
             </a>
         </nav>
