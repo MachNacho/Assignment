@@ -21,11 +21,11 @@ body{
     padding-bottom: 9px ;
 }
 
-.PageLogo img{
+.PageLogo object{
+    padding: 0px;
     color: var(--NonActiveFontColor);
-    height: 100px;
+    height: 150px;
     width: auto;
-    margin-right: 110px ;
 }
 .UserNavBar{
     width:100%;
@@ -44,6 +44,10 @@ body{
     background-color: black;
     color:var(--MainColor);
     padding:0 50px;
+    .cart-add{
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
 }
 .leftItem{
     float: right;
@@ -124,7 +128,7 @@ footer p{
 
   @media screen and (max-width: 830px) {
     
-    .UserNavBar,.PageHeader{
+    .UserNavBar,.PageHeader,.PageLogo{
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -136,3 +140,5 @@ footer p{
         display: none;
     }
 }
+
+

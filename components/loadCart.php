@@ -1,7 +1,7 @@
 <?php
 include_once("DBconnect.php");
     $UserID = $_SESSION['user_id'];
-    $sql = "SELECT cart.CartId, products.Name, products.Price, products.Amount, products.UnitOfMeasurment, cart.Quantity FROM cart LEFT JOIN products ON cart.ProductID = products.pID WHERE customerID = '$UserID' ";
+    $sql = "SELECT cart.CartId, products.Name, products.Price, products.Amount, products.UnitOfMeasurment, cart.Quantity FROM cart LEFT JOIN products ON cart.pID = products.pID WHERE customerID = '$UserID' ";
     $result = $conn->query($sql);
     $count = 0;
  

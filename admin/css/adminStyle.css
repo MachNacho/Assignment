@@ -1,53 +1,70 @@
 body{
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
 }
-
-.crudApplication-wrapper{
-    margin: auto;
-    border: 1px solid rgb(255, 0, 0);
-    display: flex;
-}
-
-.inputWrapper,.OutputWrapper{
-    border: 1px solid white;
-    padding: 10px;
-}
-.inputWrapper{
-    width: 30%
-}
-.OutputWrapper{
-width: 100%;
-}
-.Input-container{
-    width: 100%;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgb(0, 255, 106);
-}
-.Input-container label{
-    font-size: 40px;
-}
-.Input-container select,.Input-container input{
-    font-size: 30px;
-}
-.OutputWrapper{
+/* Body page */
+.tableCountContainer{
     background-color: white;
-    
-}
-.itemWrapper{
+    width: 100%;
+    padding: 20px;
     display: flex;
-    justify-content: space-evenly;
-    border: 1px solid black;
 }
-.imageContainer img{
-    width:10px;
-    height:auto;
+.TableInfoContainer{
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
 }
-.formButton{
-    border-radius: 20px;
-    font-size: 20px;
+.TableNameWrapper{
+    font-size: 50px;
 }
+.TableCountWrapper{
+    font-size: 50px;
+}
+
+.NavBar{
+    margin-top: 10px;
+    width:100%;
+    background-color: antiquewhite;
+}
+.NavBar a{
+    color: var(--NonActiveFontColor);
+    margin: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 0px;
+    border-radius: 390px;
+    transition: 0.8s;
+}
+.NavBar a:hover{
+    background-color: black;
+    color:var(--MainColor);
+    padding:0 50px;
+    .cart-add{
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+    }
+}
+/* common table for every table */
+.InfoTable {
+    padding: 10px;
+    font-size: 2em;
+}
+
+.InfoTable td{
+    border-bottom: 1px solid black;
+}
+.buttonEdit{
+    margin: 0px 10px;
+    color: black;
+    width: 100px;
+    height: 50px;
+}
+.FormHandles{
+    display: flex;
+}
+
+
 
 @media screen and (max-width: 600px) {
     .crudApplication-wrapper{
@@ -57,4 +74,209 @@ width: 100%;
     .Input-container select,.Input-container input{
         font-size: 20px;
     }
+}
+
+
+
+
+
+input[type=text], input[type=number],select{
+  margin-bottom: 10px;
+  width:100%;
+  height: 2em;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=number]:focus,select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  color: white;
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+.cancelbtn:hover{
+  opacity:1;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.ADDcontainer {
+  padding: 16px;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {box-sizing: border-box}
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
 }

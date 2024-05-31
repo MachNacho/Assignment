@@ -1,21 +1,19 @@
 <?php
 include('Components\DBconnect.php');
 include('Components\Productclass.php');
-$sql = "SELECT * FROM products ";
+$sql = "SELECT * FROM customer";
 $result = $conn->query($sql);
-$Prod = array();
-$ProdIDs = array();
+$Customers = array();
+$CustID = array();
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-    $prodName = $row["Name"];
-    $prodPrice = $row["Price"];
-    $prodMeasurment = $row["UnitOfMeasurment"];
-    $prodAmount = $row["Amount"];
-    $prodID = $row["pID"];
-    $image = $row["imageName"];
-    $date = $row["LastUpdate"];
-    $Prod[$prodID] = new Product($prodID,$prodName,$prodPrice,$prodAmount,$prodMeasurment,$date,$image);
-    $ProdIDs[] = $prodID;
+    $CustomerID = $row["CustomerID"];
+    $customerFName = $row["Firstname"];
+    $customerLName = $row["Lastname"];
+    $customerEmail = $row["email"];
+    $customerPassword= $row["userpassword"];
+    $Customers[$CustomerID] = new Customer($CustomerID, $customerFName,$customerLName,$customerEmail,$customerPassword);
+    $CustID[] = $CustomerID;
     }
 }
 include('Components\ProductEdits.php');

@@ -4,13 +4,19 @@ if(isset($_SESSION['user_id'])){
     $user =$_SESSION['user_id'];
     $sql = "SELECT * FROM cart where customerID = $user";
     $result = $conn->query($sql);
-    if(mysqli_num_rows($result)==0){
+    $a = 0;
+
+    while($row = $result->fetch_assoc()) {
+        $a = $a+$row["Quantity"];
     }
-    elseif(mysqli_num_rows($result)>10){
+    if($a==0){
+        echo 0;
+    }
+    elseif($a>10){
         echo '10+';
     }
     else{
-        echo mysqli_num_rows($result);
+        echo $a;
     }
 } 
 ?>
