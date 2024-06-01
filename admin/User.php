@@ -1,13 +1,13 @@
 <?php
 include('Components\DBconnect.php');
-include('Components\Productclass.php');
+include('Components\CustomerClass.php');
 $sql = "SELECT * FROM customer";
 $result = $conn->query($sql);
 $Customers = array();
 $CustID = array();
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-    $CustomerID = $row["CustomerID"];
+    $CustomerID = $row["customerID"];
     $customerFName = $row["Firstname"];
     $customerLName = $row["Lastname"];
     $customerEmail = $row["email"];
@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     $CustID[] = $CustomerID;
     }
 }
-include('Components\ProductEdits.php');
+include('Components\customerEdits.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,55 +34,19 @@ include('Components\ProductEdits.php');
     <a href="index.php">GO BACK</a>
     <table class='InfoTable'>
         <tr>
-            <th>ProductID</th>
-            <th>Product name</th>
-            <th>Product price</th>
-            <th>Product amount</th>
-            <th>Unit of measurment</th>
-            <th>Product update</th>
-            <th>Product image</th>
+            <th>CustomerID</th>
+            <th>First name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>Password</th>
+
         </tr>
-        <?php include('Components\loadProducts.php') ?>
+        <?php include('Components\loadCustomers.php') ?>
     </table>
 
     <div class='FormHandles'>
-        <!-- Add panel -->
-        <form class="modal-content" action="product.php" method="POST" enctype="multipart/form-data">
-            <div class="ADDcontainer">
-                <h1>Input the data</h1>
-                <p>Please fill in this form to add a product.</p>
-                <hr>
-                <label for="ProdName"><b>Product name</b></label>
-                <input type="text" placeholder="Enter Product name" name="ProdName" required>
-
-                <label for="ProdPrice"><b>Product Price</b></label>
-                <input type="number" placeholder="Enter Product Price" name="ProdPrice" required>
-
-                <label for="ProdAMT"><b>Product amount</b></label>
-                <input type="number" placeholder="Enter Product amount" name="ProdAMT" required>
-
-                <label for="ProdUOM"><b>Product unit of measurment</b></label>
-                <select name="ProdUOM" id="UOM">
-                    <option value="mg">mg</option>
-                    <option value="kg">kg</option>
-                    <option value="g">g</option>
-                    <option value="L">L</option>
-                    <option value="ml">ml</option>
-                </select>
-
-                <label for="ProdImage"><b>Product Image</b></label>
-                <input type="file" id="myfile" name="myfile" name="ProdImage" required>
-
-
-
-                <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn" name='Insert'>Insert Data</button>
-                </div>
-            </div>
-        </form>
         <!-- Remove panel -->
-        <form class="modal-content" action="product.php" method="POST">
+        <form class="modal-content" action="User.php" method="POST">
             <div class="ADDcontainer">
                 <h1>Remove entery</h1>
                 <p>Please select the ID of the unwanted product.</p>
@@ -91,7 +55,7 @@ include('Components\ProductEdits.php');
                 <label for="PRODIDss"><b>Please select the ID</b></label>
                 <select name="IDselector" id="PRODIDss">
                     <?php
-                    foreach ($ProdIDs as $x) {
+                    foreach ($CustID as $x) {
                         echo "<option value='$x'>$x</option>";
                     } ?>
                 </select>
@@ -99,7 +63,7 @@ include('Components\ProductEdits.php');
             </div>
         </form>
         <!-- Edit panel -->
-        <form class="modal-content" action="product.php" method="POST" enctype="multipart/form-data">
+        <form class="modal-content" action="User.php" method="POST">
             <div class="ADDcontainer">
                 <h1>Edit entery</h1>
                 <p>Please select the ID of the product that needs editing.</p>
@@ -107,30 +71,21 @@ include('Components\ProductEdits.php');
                 <label for="PRODIDss"><b>Please select the ID</b></label>
                 <select name="IDselector" id="PRODIDss">
                     <?php
-                    foreach ($ProdIDs as $x) {
+                    foreach ($CustID as $x) {
                         echo "<option value='$x'>$x</option>";
                     } ?>
                 </select>
-                <label for="ProdName"><b>Product name</b></label>
-                <input type="text" placeholder="Enter Product name" name="ProdName">
+                <label for="CustFName"><b>First name</b></label>
+                <input type="text" placeholder="Enter first name" name="CustFName">
 
-                <label for="ProdPrice"><b>Product Price</b></label>
-                <input type="number" placeholder="Enter Product Price" name="ProdPrice">
+                <label for="CustLName"><b>Last name</b></label>
+                <input type="text" placeholder="Enter last name" name="CustLName">
 
-                <label for="ProdAMT"><b>Product amount</b></label>
-                <input type="number" placeholder="Enter Product amount" name="ProdAMT">
+                <label for="CustEmail"><b>Email</b></label>
+                <input type="email" placeholder="Enter email" name="CustEmail">
 
-                <label for="ProdUOM"><b>Product unit of measurment</b></label>
-                <select name="ProdUOM" id="UOM">
-                    <option value="mg">mg</option>
-                    <option value="kg">kg</option>
-                    <option value="g">g</option>
-                    <option value="L">L</option>
-                    <option value="ml">ml</option>
-                </select>
-
-                <label for="ProdImage"><b>Product Image</b></label>
-                <input type="file" id="myfile" name="myfile" name="ProdImage">
+                <label for="CustPass"><b>Password</b></label>
+                <input type="password" placeholder="Enter password" name="CustPass">
 
                 <button type="submit" class="signupbtn" name='Edit'>Insert Data</button>
             </div>

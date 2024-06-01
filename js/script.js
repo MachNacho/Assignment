@@ -25,8 +25,4 @@ const inputField = document.getElementById('inputField');
 inputField.addEventListener('focus', populateDL);
 
 
-function Changes(){
-    window.alert("s");
-}
-
 
