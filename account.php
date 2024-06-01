@@ -77,70 +77,45 @@ include_once("<components/DBconnect.php");
             $sql = "SELECT * FROM `orders` WHERE customerID = $UserID";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
-               echo $row['OrderID'];
-               
-               echo $row['OrderFullName'];
-               
-               echo $row['OrderEmail'];
-               
-               echo $row['OderAddress'];
-               
-               echo $row['OrderCity'];
-               
-               echo $row['OrderProvince'];
-               
-               echo $row['OrderPostalCode'];
-               
-               echo $row['OrderPaymentOption'];
-               
-               echo $row['OrderCardName'];
-               
-               echo $row['OrderCardNum'];
-               
-               echo $row['OrderExpMonth'];
-               
-               echo $row['OrderExpYear'];
-               
-               echo $row['OrderCVV'];
-               
-               echo $row['OrderDate'];
-               
-               echo $row['customerID'];
-               
-               echo $row['OrderStatus'];
-               echo $row['OrderID'];
-               
-               echo $row['OrderFullName'];
-               
-               echo $row['OrderEmail'];
-               
-               echo $row['OderAddress'];
-               
-               echo $row['OrderCity'];
-               
-               echo $row['OrderProvince'];
-               
-               echo $row['OrderPostalCode'];
-               
-               echo $row['OrderPaymentOption'];
-               
-               echo $row['OrderCardName'];
-               
-               echo $row['OrderCardNum'];
-               
-               echo $row['OrderExpMonth'];
-               
-               echo $row['OrderExpYear'];
-               
-               echo $row['OrderCVV'];
-               
-               echo $row['OrderDate'];
-               
-               echo $row['customerID'];
-               
-               echo $row['OrderStatus'];
+               $ID = $row['OrderID'];
+               $OF =$row['OrderFullName'];
+               $OE = $row['OrderEmail'];   
+               $OA= $row['OderAddress']; 
+               $OC=$row['OrderCity'];
+               $OP= $row['OrderProvince'];
+               $OPC= $row['OrderPostalCode'];
+               $OPO =$row['OrderPaymentOption'];
+               $OCN= $row['OrderCardName'];   
+               $OCNU= $row['OrderCardNum'];
+               $OEM= $row['OrderExpMonth'];
+               $OEY= $row['OrderExpYear'];
+               $OCV= $row['OrderCVV'];
+               $OD = $row['OrderDate'];
+               $CID = $row['customerID'];
+               $OSS= $row['OrderStatus'];
+               echo"
+               <div class = 'OrderForm' id = 'OrderForm$ID'>
+                  <p>Order id: $ID</p>
+                  <p>Order id: $OF</p>
+                  <p>Order id: $OE</p>
+                  <p>Order id: $OA</p>
+                  <p>Order id: $OC</p>
+                  <p>Order id: $OP</p>
+                  <p>Order id: $OPC</p>
+                  <p>Order id: $OPO</p>
+                  <p>Order id: $OCN</p>
+                  <p>Order id: $OCNU</p>
+                  <p>Order id: $OEM</p>
+                  <p>Order id: $OEY</p>
+                  <p>Order id: $OCV</p>
+                  <p>Order id: $OD</p>
+                  <p>Order id: $CID</p>
+                  <p id = 'PurchaseStat'>Order id: $OSS</p>
+               </div>
+               ";
             }
             ?>
+
          </div>
 
 
