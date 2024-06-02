@@ -4,7 +4,33 @@ if (isset($_SESSION['user_email'])) {
 } else {
    header("Location: Userlogin.php");
 };
-include_once("<components/DBconnect.php");
+include_once("components/DBconnect.php");
+include_once("components/LoadOrders.php");
+include("components/OrderClass.php");
+$OrdersARR = array();
+$OrdersItems = array();
+
+while ($row = $result->fetch_assoc()) {
+   $order = new Order(
+      $row['OrderID'],
+      $row['OrderFullName'],
+      $row['OrderEmail'],
+      $row['OderAddress'],
+      $row['OrderCity'],
+      $row['OrderProvince'],
+      $row['OrderPostalCode'],
+      $row['OrderPaymentOption'],
+      $row['OrderCardName'],
+      $row['OrderCardNum'],
+      $row['OrderExpMonth'],
+      $row['OrderExpYear'],
+      $row['OrderCVV'],
+      $row['OrderDate'],
+      $row['customerID'],
+      $row['OrderStatus']
+   );
+   $OrdersARR[$row['OrderID']] = $order;
+}
 
 ?>
 
@@ -69,59 +95,38 @@ include_once("<components/DBconnect.php");
    <div id='orderDetails' class='orderDetails'>
       <div class='divWrapper'>
          <nav>
-            <button>TEST 1</button>
+            <?php
+            foreach ($OrdersARR as $x) {
+               $y = $x->getOrderID();
+               echo "<button onclick='openOrderInfo($y)'>Order # $y</button>";
+            } ?>
          </nav>
          <div>
             <?php
-            $UserID = $_SESSION['user_id'];
-            $sql = "SELECT * FROM `orders` WHERE customerID = $UserID";
-            $result = $conn->query($sql);
-            while ($row = $result->fetch_assoc()) {
-               $ID = $row['OrderID'];
-               $OF =$row['OrderFullName'];
-               $OE = $row['OrderEmail'];   
-               $OA= $row['OderAddress']; 
-               $OC=$row['OrderCity'];
-               $OP= $row['OrderProvince'];
-               $OPC= $row['OrderPostalCode'];
-               $OPO =$row['OrderPaymentOption'];
-               $OCN= $row['OrderCardName'];   
-               $OCNU= $row['OrderCardNum'];
-               $OEM= $row['OrderExpMonth'];
-               $OEY= $row['OrderExpYear'];
-               $OCV= $row['OrderCVV'];
-               $OD = $row['OrderDate'];
-               $CID = $row['customerID'];
-               $OSS= $row['OrderStatus'];
-               echo"
-               <div class = 'OrderForm' id = 'OrderForm$ID'>
-                  <p>Order id: $ID</p>
-                  <p>Order id: $OF</p>
-                  <p>Order id: $OE</p>
-                  <p>Order id: $OA</p>
-                  <p>Order id: $OC</p>
-                  <p>Order id: $OP</p>
-                  <p>Order id: $OPC</p>
-                  <p>Order id: $OPO</p>
-                  <p>Order id: $OCN</p>
-                  <p>Order id: $OCNU</p>
-                  <p>Order id: $OEM</p>
-                  <p>Order id: $OEY</p>
-                  <p>Order id: $OCV</p>
-                  <p>Order id: $OD</p>
-                  <p>Order id: $CID</p>
-                  <p id = 'PurchaseStat'>Order id: $OSS</p>
-               </div>
-               ";
+            foreach ($OrdersARR as $x) {
+               $y = $x->displayOrderDetails();
+               $w = $x->getOrderID();
+               $sql = "SELECT * FROM `orderitems` WHERE OrderID = $w";
+               $result = $conn->query($sql);
+               echo "<div class = 'contItems' id = 'Items$w'>";
+               echo"<h4>List items</h4>";
+               while ($row = $result->fetch_assoc()) {
+                  $x = $row['OrderitemsID'];
+                  $l = $row['OrderID'];
+                  $o = $row['Quantity'];
+                  $y = $row['Price'];
+                  $z = $row['Name'];
+                  echo "<div>$l $x $y $z</div>";
+               }
+               echo"</div>";
+
             }
             ?>
-
          </div>
-
-
       </div>
 
    </div>
+
    <?php include('components/UserFooter.php') ?>
 </body>
 
@@ -131,6 +136,21 @@ include_once("<components/DBconnect.php");
       document.getElementById('orderDetails').style.display = 'none'
    }
 
+   function openOrderInfo(P) {
+      const collection = document.getElementsByClassName("OrderForm");
+      const collection1 = document.getElementsByClassName("contItems");
+      for (let x of collection) {
+         x.style.display = 'none'
+      }
+      
+      for (let x of collection1) {
+         x.style.display = 'none'
+      }
+      let s = 'order-details' + P;
+      let r = 'Items' + P;
+      document.getElementById(s).style.display = 'block'
+      document.getElementById(r).style.display = 'block'
+   }
 
    function openOrder() {
       document.getElementById('AccountDetails').style.display = 'none'

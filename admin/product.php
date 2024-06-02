@@ -145,6 +145,3 @@ include('Components\ProductEdits.php');
 </body>
 
 </html>
-<?php
-
-?>

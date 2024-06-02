@@ -94,15 +94,18 @@
     width: 100%;
     font-size: 30px;
 }
-
+.OrderForm{
+    display: none;
+}
+.OderItemInfoContainer{
+    border: 1px solid;
+    margin: 10px;
+}
+.contItems{
+    display: none;
+}
 @media screen and (max-width: 1000px) {
 .accountContainer{
  width: 90%;
  }   
  }
-
-
-
-
-
-
