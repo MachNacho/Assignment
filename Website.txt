@@ -1,0 +1,2 @@
+The link to the final website will be hosted on: http://jerrysmeatshop.infinityfreeapp.com/?i=1
+The source code: https://github.com/MachNacho/Assignment
