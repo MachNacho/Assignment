@@ -36,13 +36,14 @@ include('Components\ProductEdits.php');
     <a href="index.php">GO BACK</a>
     <table class='InfoTable'>
         <tr>
-            <th>ProductID</th>
+        <th>ProductID</th>
             <th>Product name</th>
             <th>Product price</th>
             <th>Product amount</th>
             <th>Unit of measurment</th>
             <th>Product update</th>
             <th>Product image</th>
+           
         </tr>
         <?php include('Components\loadProducts.php') ?>
     </table>

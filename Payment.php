@@ -193,6 +193,7 @@ if (isset($_POST['Pay'])) {
             $qua = $item['quantity'];
             $pric = $item['price'];
             $name = $item['product_name'];
+            $name = str_replace("'", '', $name);
             $sql = "INSERT INTO `orderitems`( `OrderID`, `Quantity`, `Price`, `Name`) VALUES ('$order_id','$qua','$pric','$name')";
             if ($conn->query($sql) === TRUE) {
             }

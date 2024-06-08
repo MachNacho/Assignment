@@ -47,11 +47,13 @@ body{
 }
 /* common table for every table */
 .InfoTable {
+   width: 1vw;
     padding: 10px;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .InfoTable td{
+    padding:0 20px;
     border-bottom: 1px solid black;
 }
 .buttonEdit{

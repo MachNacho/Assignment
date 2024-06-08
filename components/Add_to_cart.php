@@ -5,8 +5,8 @@
       header('location:../Userlogin.php');
    }else{
     $pid = $_GET['btnProductID'];
-
-    $check_product_query="select * from cart WHERE pID='$pid'";
+    $uID = $_SESSION['user_id'];
+    $check_product_query="select * from cart WHERE pID='$pid' And customerID = '$uID'";
     $run_query=mysqli_query($conn,$check_product_query);
 
     if(mysqli_num_rows($run_query)>0)  

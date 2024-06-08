@@ -14,7 +14,7 @@
     <nav class = 'NavBar'>
         <a href ='User.php'>Users</a>
         <a href = 'product.php'>Product</a>
-        <a href = 'product.php'>Orders</a>
+        <a href = 'order.php'>Orders</a>
     </nav>
 </body>
 </html>

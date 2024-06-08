@@ -53,7 +53,7 @@ if (isset($_POST['btnPurchase'])) {
   <div class="button-container">
     <form action='checkout.php' method="post">
       <input type="submit" value="Clear" id="btnClear" name="btnClear">
-      <input type="submit" value="Purchase" id="btnPurchase"  name="btnPurchase">
+      <input type="submit" value="Purchase" id="btnPurchase"  name="btnPurchase"<?php if ($a== '0'){ ?> disabled <?php   } ?>>
     </form>
 
   </div>

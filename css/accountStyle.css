@@ -75,15 +75,14 @@
     display: none;
 }
 .orderDetails{
-    height: 500px;
-    background-color: aqua;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
     margin: 0 50px;
 }
 .divWrapper{
     height: 100%;
 }
 .divWrapper nav{
-    float: left;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: 30%;
@@ -98,11 +97,22 @@
     display: none;
 }
 .OderItemInfoContainer{
+    border-radius: 10px;
+    background-color: #ccc;
+    padding: 10px;
     border: 1px solid;
     margin: 10px;
 }
 .contItems{
+    border-radius: 10px;
+    background-color: #ccc;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
     display: none;
+}
+.contItems div{
+    padding: 10px;
 }
 @media screen and (max-width: 1000px) {
 .accountContainer{

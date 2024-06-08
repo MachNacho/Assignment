@@ -116,7 +116,8 @@ while ($row = $result->fetch_assoc()) {
                   $o = $row['Quantity'];
                   $y = $row['Price'];
                   $z = $row['Name'];
-                  echo "<div>$l $x $y $z</div>";
+                  $k =$o*$y;
+                  echo "<div>iTEM: $z X $x =<strong> R$k</strong></div>";
                }
                echo"</div>";
 
